@@ -1,4 +1,4 @@
-@(createForm: Form[femr.ui.models.sessions.CreateViewModel])
+@(createForm: Form[femr.ui.models.sessions.CreateViewModel], message: java.lang.String)
 
 @import femr.ui.views.html.layouts.main
 @import femr.ui.controllers.routes.SessionsController
@@ -10,6 +10,7 @@
     @helper.form(action = SessionsController.createPost(), 'class -> "form-signin") {
         <div id="login">
             <h1>Please sign in</h1>
+            <h5 style="color: #ff0013;">@message</h5>
             <input type="text" name="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" />
             <input type="submit" value="Log in" />
